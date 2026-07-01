@@ -1,7 +1,15 @@
+import dotenv from 'dotenv';
 import Server from './src/server/express.server.js';
+import { dbConnectMysql } from './src/config/mysql/mysql.js';
+
 
 async function main() {
     try {
+        // Conexión a la base de datos
+        // await dbConnectMongoose();
+        await dbConnectMysql();
+
+
         const server = new Server();
         await server.start();
     } catch (error) {

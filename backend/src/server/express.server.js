@@ -1,11 +1,12 @@
 import express from 'express';
 import cors from 'cors';
 import router from '../routes/index.js';
+import { env } from '../config/envConfig/config.js';
 
 class Server {
     constructor() {
         this.app = express();
-        this.port = 3000;
+        this.port = env.PORT;
         this.middleware();
         this.routes();
     }

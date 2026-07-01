@@ -1,23 +1,21 @@
-import { Sequelize } from 'sequelize';
 
-const database = process.env.MYSQL_DATABASE;
-const username = process.env.MYSQL_USER;
-const password = process.env.MYSQL_PASSWORD;
-const host = process.env.MYSQL_HOST;
-const port = process.env.MYSQL_PORT;
+import { Sequelize } from 'sequelize';
+import { env } from '../envConfig/config.js';
+
 const sequelize = new Sequelize(
-    database,
-    username,
-    password,
+    env.MYSQL_DATABASE,
+    env.MYSQL_USER,
+    env.MYSQL_PASSWORD,
     {
-        host,
-        port,
+        host: env.MYSQL_HOST,
+        port: env.MYSQL_PORT,
         dialect: 'mysql'
     }
 );
 
 const dbConnectMysql = async () => {
     try {
+
         await sequelize.authenticate();
         console.log('Conectado a la base de datos mysql');
     } catch (error) {
