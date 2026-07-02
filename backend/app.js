@@ -1,4 +1,26 @@
-import Server from './src/server/express.server.js';
 
-const server = new Server();
-server.listen();
+import Server from './src/server/express.server.js';
+import { dbConnectMysql } from './src/config/mysql/mysql.js';
+
+
+async function main() {
+    try {
+        // Conexión a la base de datos
+        //await dbConnectMongoose();
+        await dbConnectMysql();
+
+
+        const server = new Server();
+        await server.start();
+    } catch (error) {
+        process.exit(1);
+    }
+}
+
+// Manejo de errores e inicio del servidor
+main().catch(
+    (error) => {
+        console.error('Error fatal:', error);
+        process.exit(1);
+    }
+);

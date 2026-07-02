@@ -1,0 +1,361 @@
+.app-shell {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 280px 1fr;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: 100vh;
+    padding: 22px;
+    color: var(--white);
+    background: var(--primary);
+    transition: width var(--transition), transform var(--transition);
+}
+
+.sidebar.collapsed {
+    width: 92px;
+}
+
+.sidebar-brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.sidebar-brand span {
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.brand-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    place-items: center;
+    color: var(--primary);
+    background: var(--white);
+    border-radius: 12px;
+}
+
+.sidebar-menu {
+    display: grid;
+    gap: 8px;
+}
+
+.sidebar-link {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 14px;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateX(3px);
+}
+
+.sidebar-link i {
+    font-size: 1.15rem;
+}
+
+.sidebar.collapsed .sidebar-text,
+.sidebar.collapsed .sidebar-brand span {
+    display: none;
+}
+
+.app-main {
+    min-width: 0;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 78px;
+    padding: 16px 30px;
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(14px);
+}
+
+.topbar-search {
+    position: relative;
+    flex: 1;
+    max-width: 520px;
+}
+
+.topbar-search i {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    color: var(--muted);
+    transform: translateY(-50%);
+}
+
+.topbar-search input {
+    padding-left: 44px;
+}
+
+.icon-btn {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.icon-btn:hover {
+    border-color: rgba(52, 182, 167, 0.45);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.content-area {
+    padding: 30px;
+}
+
+.page-header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.page-title h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.page-title p {
+    margin: 6px 0 0;
+    color: var(--muted);
+}
+
+.kpi-card {
+    padding: 22px;
+}
+
+.kpi-card .kpi-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    font-size: 1.3rem;
+    border-radius: 14px;
+}
+
+.kpi-card strong {
+    display: block;
+    margin-top: 18px;
+    font-size: 2rem;
+}
+
+.kpi-card span {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.list-clean {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.activity-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.activity-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.table-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.table-actions .icon-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+}
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.kanban-column {
+    min-height: 520px;
+    padding: 14px;
+    background: color-mix(in srgb, var(--surface) 75%, var(--body));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.kanban-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.task-card {
+    padding: 16px;
+    margin-bottom: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--primary);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.priority-high {
+    border-left-color: var(--danger);
+}
+
+.priority-medium {
+    border-left-color: var(--warning);
+}
+
+.priority-low {
+    border-left-color: var(--success);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.calendar-cell {
+    min-height: 118px;
+    padding: 12px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.calendar-event {
+    display: block;
+    padding: 5px 8px;
+    margin-top: 8px;
+    color: var(--white);
+    font-size: 0.78rem;
+    border-radius: 9px;
+}
+
+.tag-pill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    border-radius: var(--radius);
+}
+
+.profile-photo {
+    width: 132px;
+    height: 132px;
+    object-fit: cover;
+    border: 6px solid rgba(52, 182, 167, 0.18);
+    border-radius: 28px;
+}
+
+.footer {
+    padding: 20px 30px 28px;
+    color: var(--muted);
+    text-align: center;
+}
+
+body.sidebar-open .sidebar {
+    transform: translateX(0);
+}
+
+@media (max-width: 991.98px) {
+    .app-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: fixed;
+        width: 280px;
+        transform: translateX(-100%);
+    }
+
+    .topbar {
+        padding: 14px 18px;
+    }
+
+    .topbar-search {
+        display: none;
+    }
+
+    .content-area {
+        padding: 22px 16px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .kanban-board {
+        grid-template-columns: repeat(4, 280px);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .topbar-user-details {
+        display: none;
+    }
+
+    .content-area {
+        padding: 18px 12px;
+    }
+
+    .page-title h1 {
+        font-size: 1.55rem;
+    }
+}
