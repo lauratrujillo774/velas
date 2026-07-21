@@ -21,44 +21,44 @@
             <form id="registerForm" class="row g-3" novalidate>
                 <div class="col-md-6">
                     <label class="form-label" for="firstName">Nombre</label>
-                    <input class="form-control" id="firstName" required>
+                    <input class="form-control" id="firstName" name="firstName" required>
                     <div class="invalid-feedback">Campo obligatorio.</div>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="lastName">Apellido</label>
-                    <input class="form-control" id="lastName" required>
+                    <input class="form-control" id="lastName" name="lastName" required>
                     <div class="invalid-feedback">Campo obligatorio.</div>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="username">Usuario</label>
-                    <input class="form-control" id="username" required>
+                    <input class="form-control" id="username" name="username" required>
                     <div class="invalid-feedback">Campo obligatorio.</div>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="phone">Teléfono</label>
-                    <input class="form-control" id="phone" type="tel" required>
+                    <input class="form-control" id="phone" name="phone" type="tel" required>
                     <div class="invalid-feedback">Campo obligatorio.</div>
                 </div>
                 <div class="col-12">
                     <label class="form-label" for="registerEmail">Correo</label>
-                    <input class="form-control" id="registerEmail" type="email" required>
+                    <input class="form-control" id="registerEmail" name="email" type="email" required>
                     <div class="invalid-feedback">Ingresa un correo válido.</div>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="registerPassword">Contraseña</label>
-                    <input class="form-control" id="registerPassword" type="password" minlength="6" required>
+                    <input class="form-control" id="registerPassword" name="password" type="password" minlength="6" required>
                     <div class="invalid-feedback">Mínimo 6 caracteres.</div>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="confirmPassword">Confirmar contraseña</label>
-                    <input class="form-control" id="confirmPassword" type="password" minlength="6" required>
+                    <input class="form-control" id="confirmPassword" name="confirmPassword" type="password" minlength="6" required>
                     <div class="invalid-feedback">Confirma tu contraseña.</div>
                 </div>
                 <div class="col-12">
                     <label class="form-label" for="photoInput">Fotografía</label>
                     <div class="upload-preview">
-                        <img id="photoPreview" src="https://via.placeholder.com/96x96" alt="Vista previa de fotografia">
-                        <input class="form-control" id="photoInput" type="file" accept="image/*">
+                        <img id="photoPreview" src="../assets/img/auth-illustration.svg" alt="Vista previa de fotografia">
+                        <input class="form-control" id="photoInput" name="photoInput" type="file" accept="image/*">
                     </div>
                 </div>
                 <div class="col-12">

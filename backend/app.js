@@ -1,6 +1,7 @@
 
+import './src/config/env.js';
 import Server from './src/server/express.server.js';
-import { dbConnectMysql } from './src/config/mysql/mysql.js';
+import { dbConnectMysql } from './src/config/mysql/dbmysql.js';
 
 
 async function main() {

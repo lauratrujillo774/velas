@@ -30,7 +30,7 @@
             </section>
 
             <div class="auth-person fade-in">
-                <img src="https://via.placeholder.com/420x600" alt="Persona usando la aplicacion Guilar">
+                <img src="../assets/img/auth-illustration.svg" alt="Persona usando la aplicacion Guilar">
             </div>
 
             <section class="col-lg-7 vh-100 d-flex align-items-center justify-content-center auth-panel">
@@ -40,13 +40,13 @@
                     <form id="loginForm" novalidate>
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo</label>
-                            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
                             <div class="invalid-feedback">Ingresa un correo válido.</div>
                         </div>
 
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" placeholder="Tu contraseña" required minlength="6">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Tu contraseña" required minlength="6">
                             <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
                         </div>
 
